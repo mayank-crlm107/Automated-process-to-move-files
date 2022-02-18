@@ -1,5 +1,4 @@
-# Create Folder_to_track and folder_destination in appropriate directory before running the code.
-# Files are successfully moved only when moving them to the Folder_to_track, not when copying and pasting.
+# Create <Folder_to_track> and <folder_destination> in appropriate directory before running the code.
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -15,7 +14,8 @@ class MyHandler(FileSystemEventHandler):
             new_destination = folder_destination + "/" + filename
             os.rename(src, new_destination)
 
-folder_to_track = "#"
+# Enter the source and destination folders directories below 
+folder_to_track = "#"    
 folder_destination = "#"
 event_handler = MyHandler()
 observer = Observer()
